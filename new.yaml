@@ -4,9 +4,20 @@ metadata:
   name: my-service
   description: A description of my-service
   labels:
-    team: my-teams
+    team: my-team
 spec:
   type: service
   lifecycle: production
-  owner: team@example.coms
+  owner: team@example.com
   system: my-system
+  ci/cd:
+    - name: GitHub Actions
+      type: github-actions
+      config:
+        repository: my-org/my-repo
+        workflow: .github/workflows/main.yml
+    - name: Jenkins
+      type: jenkins
+      config:
+        baseUrl: http://jenkins.example.com
+        job: my-job

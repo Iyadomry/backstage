@@ -10,14 +10,9 @@ spec:
   lifecycle: production
   owner: team@example.com
   system: my-system
-  ci/cd:
+  ci:
     - name: GitHub Actions
-      type: github-actions
-      config:
-        repository: my-org/my-repo
-        workflow: .github/workflows/main.yml
+      url: https://github.com/my-org/my-repo/actions
+  cd:
     - name: Jenkins
-      type: jenkins
-      config:
-        baseUrl: http://jenkins.example.com
-        job: my-job
+      url: http://jenkins.example.com/job/my-job
